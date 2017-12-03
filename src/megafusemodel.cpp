@@ -122,6 +122,9 @@ Node* MegaFuseModel::nodeByPath(std::string path)
 
 Node* MegaFuseModel::childNodeByName(Node *p,std::string name)
 {
+	if (!p)
+		return p;
+
 	if(engine_mutex.try_lock()) {
 		abort();
 	}
